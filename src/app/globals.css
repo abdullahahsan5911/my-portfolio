@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Centralized theme tokens.
+  To change the entire palette, edit ONLY the values in these two blocks.
+  Every color used across the app is a Tailwind utility that maps back to
+  one of these variables (see tailwind.config.ts) — nothing is hard-coded
+  in individual components.
+*/
+:root {
+  --background: #f7f5f1;
+  --foreground: #14171c;
+  --muted: #ece8e0;
+  --muted-foreground: #5b5a54;
+  --border: #ddd8cd;
+  --card: #ffffff;
+  --primary: #35418c;
+  --primary-foreground: #ffffff;
+  --secondary: #c98a2c;
+  --secondary-foreground: #14171c;
+  --accent: #c98a2c;
+  --accent-foreground: #14171c;
+}
+
+.dark {
+  --background: #0e1116;
+  --foreground: #e9e7e0;
+  --muted: #171b22;
+  --muted-foreground: #9a978d;
+  --border: #262b34;
+  --card: #141821;
+  --primary: #7c8cf5;
+  --primary-foreground: #0e1116;
+  --secondary: #f0b25c;
+  --secondary-foreground: #0e1116;
+  --accent: #f0b25c;
+  --accent-foreground: #0e1116;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
