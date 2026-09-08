@@ -42,7 +42,7 @@ export function Hero() {
       <div data-hero-line className="line-pulse mt-6 h-px w-full max-w-xl bg-border" />
 
       <p data-hero-copy className="mt-6 max-w-prose text-lg text-muted-foreground sm:text-xl">
-        {portfolio.title} — {portfolio.intro}
+        {portfolio.title} - {portfolio.intro}
       </p>
 
       <div className="mt-6 flex flex-wrap gap-2 font-mono text-xs text-muted-foreground">

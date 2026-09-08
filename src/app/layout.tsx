@@ -27,10 +27,10 @@ const siteUrl = "https://abdullahahsan.dev"; // TODO: Replace with your real dep
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${portfolio.name} — ${portfolio.title}`,
+  title: `${portfolio.name} - ${portfolio.title}`,
   description: portfolio.intro,
   openGraph: {
-    title: `${portfolio.name} — ${portfolio.title}`,
+    title: `${portfolio.name} - ${portfolio.title}`,
     description: portfolio.intro,
     url: siteUrl,
     siteName: portfolio.name,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${portfolio.name} — ${portfolio.title}`,
+    title: `${portfolio.name} - ${portfolio.title}`,
     description: portfolio.intro
   },
   icons: {

@@ -1,5 +1,5 @@
 // Central source of truth for all site-level (non-list) portfolio data.
-// Edit this file to update the hero, about section, contact info, and nav —
+// Edit this file to update the hero, about section, contact info, and nav
 // no component in src/components should ever hard-code these values.
 
 export const portfolio = {
@@ -12,12 +12,12 @@ export const portfolio = {
   phone: null as string | null,
 
   intro:
-    "I build full-stack web applications end to end — from REST APIs and databases to the React interfaces on top of them.",
+    "I build full-stack web applications end to end from REST APIs and databases to the React interfaces on top of them.",
 
   about: [
     "I'm a Computer Science student and web developer focused on web application development and Node.js. I have hands-on experience building web applications with JavaScript, React.js, Node.js, REST APIs, Firebase, and modern web tooling.",
     "I've contributed to web development projects at AlfaOrigin, and earlier supported short-term projects at Data X Technologies, where I picked up practical, production-oriented development habits.",
-    "Outside of client and freelance work, I build side projects to explore backend architecture and web engineering more deeply — most recently LocalSkillHub, a region-specific freelance marketplace with its own trust and reputation system."
+    "Outside of client and freelance work, I build side projects to explore backend architecture and web engineering more deeply most recently LocalSkillHub, a region-specific freelance marketplace with its own trust and reputation system."
   ],
 
   social: {

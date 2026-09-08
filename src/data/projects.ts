@@ -6,7 +6,7 @@ export type Project = {
   features: string[];
   githubUrl: string | null;
   liveUrl: string | null;
-  // Path under /public/assets/projects — replace the actual file when you have a screenshot.
+  // Path under /public/assets/projects - replace the actual file when you have a screenshot.
   image: string;
   featured?: boolean;
 };
@@ -45,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     slug: "datax-lead-ledger",
-    name: "DataX — Lead Ledger",
+    name: "DataX - Lead Ledger",
     description:
       "DataX Lead Ledger is a sales workspace that helps teams organize prospects from first contact to closed deal. It gives sales and marketing teams one place to track leads, conversations, follow-ups, and pipeline progress.",
     tech: [

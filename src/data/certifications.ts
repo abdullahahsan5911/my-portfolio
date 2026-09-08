@@ -1,7 +1,6 @@
 export type Certification = {
   name: string;
-  // TODO: LinkedIn's export didn't preserve issuing organizations for these —
-  // confirm and fill in the issuer for each certificate below.
+  // TODO: LinkedIn's export didn't preserve issuing organizations for these - confirm and fill in the issuer for each certificate below.
   issuer: string | null;
   date: string | null;
   credentialUrl: string | null;
