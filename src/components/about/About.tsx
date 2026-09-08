@@ -4,9 +4,9 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function About() {
   return (
-    <section id="about" className="container py-20 sm:py-28">
+    <section id="about" className="container py-14 sm:py-20">
       <SectionHeading index="01" title="About" />
-      <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
+      <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
         <Reveal className="space-y-5">
           {portfolio.about.map((paragraph) => (
             <p key={paragraph} className="max-w-prose text-base leading-relaxed text-muted-foreground sm:text-lg">

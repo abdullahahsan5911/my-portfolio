@@ -8,24 +8,22 @@ import { Experience } from "@/components/experience/Experience";
 import { Certifications } from "@/components/certifications/Certifications";
 import { Education } from "@/components/education/Education";
 import { Contact } from "@/components/contact/Contact";
-import { SectionScroller } from "@/components/scroll/SectionScroller";
+import { ScrollProgress } from "@/components/scroll/ScrollProgress";
 
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
-
-        <SectionScroller>
-          <About />
-          <Projects />
-          <Experience />
-          <Certifications />
-          <Skills />
-          <Education />
-          <Contact />
-        </SectionScroller>
+        <About />
+        <Projects />
+        <Experience />
+        <Certifications />
+        <Skills />
+        <Education />
+        <Contact />
       </main>
       <Footer />
     </>

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+
 type SectionHeadingProps = {
   index: string;
   title: string;
@@ -5,9 +9,25 @@ type SectionHeadingProps = {
 };
 
 export function SectionHeading({ index, title, description }: SectionHeadingProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div className="mb-10 flex items-baseline gap-4 border-b border-border pb-5 sm:mb-14">
-      <span className="font-mono text-sm text-muted-foreground">{index}</span>
+    <motion.div
+      className="mb-8 flex items-baseline gap-4 border-b border-border pb-4 sm:mb-10"
+      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 18 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <motion.span
+        className="font-mono text-sm text-muted-foreground"
+        initial={shouldReduceMotion ? undefined : { opacity: 0, x: -12 }}
+        whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.12, duration: 0.45 }}
+      >
+        {index}
+      </motion.span>
       <div>
         <h2 className="font-display text-2xl font-medium sm:text-3xl">{title}</h2>
         {description ? (
@@ -16,6 +36,6 @@ export function SectionHeading({ index, title, description }: SectionHeadingProp
           </p>
         ) : null}
       </div>
-    </div>
+    </motion.div>
   );
 }

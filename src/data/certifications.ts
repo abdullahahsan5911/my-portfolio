@@ -10,24 +10,24 @@ export type Certification = {
 
 export const certifications: Certification[] = [
   {
-    name: "AI Seekho",
-    issuer: null,
-    date: null,
+    name: "AI Seekho 2026 - Regional Shortlist",
+    issuer: "AI Seekho / Google for Developers",
+    date: "2026",
     credentialUrl: null,
-    image: null
+    image: "/assets/certificates/ai.jpg"
   },
   {
     name: "Web Development",
-    issuer: null,
-    date: null,
+    issuer: "DevCastle Career Institute",
+    date: "2024",
     credentialUrl: null,
-    image: null
+    image: "/assets/certificates/dev castle.jpg"
   },
   {
-    name: "Code Air",
-    issuer: null,
+    name: "CodeAir 3.0 - Category Alpha",
+    issuer: "Microsoft Learn Student Ambassadors, Air University",
     date: null,
     credentialUrl: null,
-    image: null
+    image: "/assets/certificates/codeair.jpg"
   }
 ];

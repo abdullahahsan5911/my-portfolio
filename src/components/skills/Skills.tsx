@@ -4,21 +4,20 @@ import { SkillBadge } from "@/components/skills/SkillBadge";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Skills() {
+  const renderItems = (items: string[]) => (
+    <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+      {items.map((item, index) => (
+        <Reveal key={item} delay={index * 0.035}>
+          <SkillBadge label={item} />
+        </Reveal>
+      ))}
+    </div>
+  );
+
   return (
-    <section id="skills" className="container py-20 sm:py-28">
-      <SectionHeading index="02" title="Skills" description="Technologies I use regularly, grouped by where they sit in the stack." />
-      <div className="grid gap-8 sm:grid-cols-2">
-        {skills.map((group, i) => (
-          <Reveal key={group.group} delay={i * 0.05}>
-            <h3 className="font-mono text-sm text-muted-foreground">{group.group}</h3>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <SkillBadge key={item} label={item} />
-              ))}
-            </div>
-          </Reveal>
-        ))}
-      </div>
+    <section id="skills" className="container py-14 sm:py-20">
+      <SectionHeading index="02" title="Skills" description="The languages, capabilities, and technologies I use to turn ideas into working products." />
+      {renderItems(skills)}
     </section>
   );
 }

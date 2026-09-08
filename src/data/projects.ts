@@ -16,7 +16,7 @@ export const projects: Project[] = [
     slug: "localskillhub",
     name: "LocalSkillHub",
     description:
-      "A region-specific freelance marketplace that pairs a standard gig-marketplace flow (post a job, send proposals, escrow contracts) with local trust signals — geo-filtered discovery, community endorsements, and a local reputation score — instead of purely global job matching.",
+      "LocalSkillHub is a freelance marketplace for connecting people with trusted professionals in their own region. Clients can find local talent, compare reputation signals, agree on work, and manage projects in one place.",
     tech: [
       "React (Vite)",
       "Tailwind CSS",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     slug: "datax-lead-ledger",
     name: "DataX — Lead Ledger",
     description:
-      "An MVP CRM scaffold built for the DataX AI Business Automation Platform — authentication, role-aware users, and a full sales pipeline (leads, statuses, notes, follow-up tasks) driving a Next.js dashboard.",
+      "DataX Lead Ledger is a sales workspace that helps teams organize prospects from first contact to closed deal. It gives sales and marketing teams one place to track leads, conversations, follow-ups, and pipeline progress.",
     tech: [
       "Next.js 14 (App Router)",
       "TypeScript",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     slug: "rentconnect",
     name: "RentConnect",
     description:
-      "A peer-to-peer rental marketplace built around trust and safety rather than just listings — identity verification, a reputation/trust score, demand-based dynamic pricing, and an escrow-backed booking workflow.",
+      "RentConnect is a peer-to-peer rental marketplace where people can discover, book, and manage access to items or spaces offered by other users. The product is designed to make local rentals feel safer, clearer, and easier to coordinate.",
     tech: [
       "React (Vite)",
       "Tailwind CSS",
@@ -103,99 +103,7 @@ export const projects: Project[] = [
     // TODO: Replace this image with an actual RentConnect screenshot.
     featured: false
   },
-  {
-    slug: "rentonnect",
-    name: "RentConnect",
-    description:
-      "A peer-to-peer rental marketplace built around trust and safety rather than just listings — identity verification, a reputation/trust score, demand-based dynamic pricing, and an escrow-backed booking workflow.",
-    tech: [
-      "React (Vite)",
-      "Tailwind CSS",
-      "React Query",
-      "Redux Toolkit",
-      "Node.js",
-      "Express",
-      "MongoDB Atlas",
-      "Redis",
-      "Socket.io",
-      "Stripe / PayPal",
-      "Mapbox / Google Maps"
-    ],
-    features: [
-      "Identity verification and a composite trust score (ratings, verified IDs, endorsements)",
-      "Demand-based dynamic pricing engine with owner-configurable rules",
-      "Escrow-backed booking workflow: request → confirm → payment hold → release",
-      "Real-time chat, notifications, and a dispute-resolution module with evidence upload"
-    ],
-    // TODO: Add the GitHub repository link for this project once confirmed.
-    githubUrl: null,
-    liveUrl: null,
-    image: "/assets/projects/rentconnect.png",
-    // TODO: Replace this image with an actual RentConnect screenshot.
-    featured: false
-  },
-  {
-    slug: "rentconect",
-    name: "RentConnect",
-    description:
-      "A peer-to-peer rental marketplace built around trust and safety rather than just listings — identity verification, a reputation/trust score, demand-based dynamic pricing, and an escrow-backed booking workflow.",
-    tech: [
-      "React (Vite)",
-      "Tailwind CSS",
-      "React Query",
-      "Redux Toolkit",
-      "Node.js",
-      "Express",
-      "MongoDB Atlas",
-      "Redis",
-      "Socket.io",
-      "Stripe / PayPal",
-      "Mapbox / Google Maps"
-    ],
-    features: [
-      "Identity verification and a composite trust score (ratings, verified IDs, endorsements)",
-      "Demand-based dynamic pricing engine with owner-configurable rules",
-      "Escrow-backed booking workflow: request → confirm → payment hold → release",
-      "Real-time chat, notifications, and a dispute-resolution module with evidence upload"
-    ],
-    // TODO: Add the GitHub repository link for this project once confirmed.
-    githubUrl: null,
-    liveUrl: null,
-    image: "/assets/projects/rentconnect.png",
-    // TODO: Replace this image with an actual RentConnect screenshot.
-    featured: false
-  },
-  {
-    slug: "entconnect",
-    name: "RentConnect",
-    description:
-      "A peer-to-peer rental marketplace built around trust and safety rather than just listings — identity verification, a reputation/trust score, demand-based dynamic pricing, and an escrow-backed booking workflow.",
-    tech: [
-      "React (Vite)",
-      "Tailwind CSS",
-      "React Query",
-      "Redux Toolkit",
-      "Node.js",
-      "Express",
-      "MongoDB Atlas",
-      "Redis",
-      "Socket.io",
-      "Stripe / PayPal",
-      "Mapbox / Google Maps"
-    ],
-    features: [
-      "Identity verification and a composite trust score (ratings, verified IDs, endorsements)",
-      "Demand-based dynamic pricing engine with owner-configurable rules",
-      "Escrow-backed booking workflow: request → confirm → payment hold → release",
-      "Real-time chat, notifications, and a dispute-resolution module with evidence upload"
-    ],
-    // TODO: Add the GitHub repository link for this project once confirmed.
-    githubUrl: null,
-    liveUrl: null,
-    image: "/assets/projects/rentconnect.png",
-    // TODO: Replace this image with an actual RentConnect screenshot.
-    featured: false
-  }
+
 
   // Additional repos exist that weren't verified in enough detail to publish yet.
   // Fill in description/tech/features/links and move into the array above when ready:

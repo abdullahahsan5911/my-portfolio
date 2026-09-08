@@ -10,33 +10,33 @@
   in individual components.
 */
 :root {
-  --background: #f7f5f1;
-  --foreground: #14171c;
-  --muted: #ece8e0;
-  --muted-foreground: #5b5a54;
-  --border: #ddd8cd;
+  --background: #f5f0e8;
+  --foreground: #17181b;
+  --muted: #e9e3d8;
+  --muted-foreground: #68645c;
+  --border: #d8d0c3;
   --card: #ffffff;
-  --primary: #35418c;
+  --primary: #c65343;
   --primary-foreground: #ffffff;
-  --secondary: #c98a2c;
-  --secondary-foreground: #14171c;
-  --accent: #c98a2c;
-  --accent-foreground: #14171c;
+  --secondary: #217e78;
+  --secondary-foreground: #ffffff;
+  --accent: #e5a83b;
+  --accent-foreground: #17181b;
 }
 
 .dark {
-  --background: #0e1116;
-  --foreground: #e9e7e0;
-  --muted: #171b22;
-  --muted-foreground: #9a978d;
-  --border: #262b34;
-  --card: #141821;
-  --primary: #7c8cf5;
-  --primary-foreground: #0e1116;
-  --secondary: #f0b25c;
-  --secondary-foreground: #0e1116;
-  --accent: #f0b25c;
-  --accent-foreground: #0e1116;
+  --background: #111416;
+  --foreground: #f1ede5;
+  --muted: #1b2020;
+  --muted-foreground: #a8a69c;
+  --border: #303735;
+  --card: #171c1c;
+  --primary: #ef775f;
+  --primary-foreground: #17181b;
+  --secondary: #64c6bc;
+  --secondary-foreground: #111416;
+  --accent: #e8b34c;
+  --accent-foreground: #17181b;
 }
 
 * {
@@ -48,9 +48,54 @@ html {
 }
 
 body {
+  min-width: 320px;
   background-color: var(--background);
+  background-image: radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 22rem), linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: auto, 4rem 4rem, 4rem 4rem;
+  background-position: center top, center top, center top;
+  background-attachment: fixed;
   color: var(--foreground);
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+main,
+footer {
+  background-color: color-mix(in srgb, var(--background) 94%, transparent);
+}
+
+@keyframes ambient-drift {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 14px, 0);
+  }
+}
+
+@keyframes line-pulse {
+
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleX(0.82);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+}
+
+.ambient-drift {
+  animation: ambient-drift 8s ease-in-out infinite;
+}
+
+.line-pulse {
+  animation: line-pulse 4s ease-in-out infinite;
+  transform-origin: left;
 }
 
 ::selection {

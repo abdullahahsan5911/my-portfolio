@@ -5,9 +5,9 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Contact() {
   return (
-    <section id="contact" className="container py-20 sm:py-28">
+    <section id="contact" className="container py-14 sm:py-20">
       <SectionHeading index="07" title="Contact" />
-      <Reveal className="grid gap-8 sm:grid-cols-[2fr_1fr]">
+      <Reveal className="grid gap-6 sm:grid-cols-[2fr_1fr]">
         <div>
           <p className="max-w-prose text-lg text-muted-foreground sm:text-xl">
             Have a project in mind, or a role you think I'd be a fit for? I'm happy to talk.

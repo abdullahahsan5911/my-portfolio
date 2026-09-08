@@ -1,18 +1,19 @@
 import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import { ImageCarousel } from "@/components/ui/ImageCarousel";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article
       className={cn(
-        "grid min-w-0 gap-10 border-b border-border/70 pb-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center lg:gap-16 lg:border-b-0 lg:pb-0",
-        project.featured && "lg:grid-cols-[1fr_1.1fr]"
+        "group grid min-w-0 grid-cols-[minmax(9rem,0.85fr)_minmax(0,1.15fr)] items-center gap-5 border-b border-border/70 pb-8 sm:gap-8 lg:gap-16 lg:border-b-0 lg:pb-0",
+        project.featured && "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]"
       )}
     >
-      <div className="order-2 flex flex-col lg:order-1">
+      <div className="order-2 flex min-w-0 flex-col lg:order-1">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h3 className="min-w-0 break-words font-display text-5xl font-bold uppercase leading-none tracking-tight sm:text-7xl">
+          <h3 className="min-w-0 break-words font-display text-2xl font-bold uppercase leading-none tracking-tight transition-colors duration-500 group-hover:text-primary sm:text-5xl lg:text-6xl">
             {project.name}
           </h3>
           {project.featured ? (
@@ -20,7 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ) : null}
         </div>
 
-        <p className="mt-3 max-w-prose text-muted-foreground">{project.description}</p>
+        <p className="mt-3 max-w-prose text-sm text-muted-foreground sm:text-base">{project.description}</p>
 
         <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
           {project.features.map((feature) => (
@@ -65,15 +66,18 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="group relative order-1 lg:order-2">
-        <div className="relative aspect-video overflow-hidden rounded-lg border border-border/70 bg-muted">
-          <div className="absolute inset-0 z-10 bg-primary/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={project.image}
+      <div className="group relative order-1 min-w-0 lg:order-2">
+        <div className="relative aspect-video overflow-hidden rounded-lg border border-border/70 bg-muted shadow-sm transition-transform duration-700 group-hover:-translate-y-1 group-hover:shadow-xl">
+          <div className="pointer-events-none absolute inset-0 z-10 bg-primary/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="absolute inset-0 flex flex-col justify-between bg-[radial-gradient(circle_at_80%_20%,rgba(201,138,44,0.35),transparent_35%),linear-gradient(135deg,var(--primary),#12151c)] p-6 text-primary-foreground">
+            <span className="font-mono text-xs uppercase tracking-[0.3em]">Case study / {project.slug}</span>
+            <span className="max-w-[10ch] font-display text-4xl leading-none sm:text-6xl">{project.name}</span>
+          </div>
+          <ImageCarousel
+            images={[project.image]}
             alt={`Screenshot of the ${project.name} project`}
-            onError={(event) => { event.currentTarget.style.display = "none"; }}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="relative z-[1] h-full"
+            imageClassName="relative h-full w-full object-cover transition-transform duration-700 group-hover/image:scale-105"
           />
         </div>
         {project.liveUrl ? (

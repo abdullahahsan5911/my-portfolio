@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Education() {
   return (
-    <section id="education" className="container py-20 sm:py-28">
+    <section id="education" className="container py-14 sm:py-20">
       <SectionHeading index="06" title="Education" />
       <Reveal>
         <div>

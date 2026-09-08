@@ -25,7 +25,9 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" ref={scope} className="container flex min-h-[70vh] flex-col justify-center pb-16 pt-28 sm:pt-32">
+    <section id="top" ref={scope} className="container relative flex min-h-[70vh] flex-col justify-center overflow-hidden pb-12 pt-24 sm:pt-28">
+      <div aria-hidden="true" className="ambient-drift pointer-events-none absolute right-[8%] top-1/4 hidden h-64 w-px bg-gradient-to-b from-transparent via-primary/70 to-transparent lg:block" />
+      <div aria-hidden="true" className="pointer-events-none absolute right-[8%] top-1/4 hidden h-px w-24 bg-secondary/70 lg:block" />
       <p data-hero-eyebrow className="font-mono text-sm text-muted-foreground">
         {portfolio.location}
       </p>
@@ -37,7 +39,7 @@ export function Hero() {
         {portfolio.name}
       </h1>
 
-      <div data-hero-line className="mt-6 h-px w-full max-w-xl bg-border" />
+      <div data-hero-line className="line-pulse mt-6 h-px w-full max-w-xl bg-border" />
 
       <p data-hero-copy className="mt-6 max-w-prose text-lg text-muted-foreground sm:text-xl">
         {portfolio.title} — {portfolio.intro}

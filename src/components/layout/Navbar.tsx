@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,17 +12,28 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
       <nav className="container flex h-16 items-center justify-between" aria-label="Primary">
-        <a href="#top" className="font-display text-lg font-medium">
+        <motion.a
+          href="#top"
+          className="font-display text-lg font-medium"
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {portfolio.name}
-        </a>
+        </motion.a>
 
         <ul className="hidden items-center gap-7 font-mono text-sm md:flex">
           {portfolio.nav.map((item) => (
-            <li key={item.href}>
+            <motion.li
+              key={item.href}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, delay: 0.08 * portfolio.nav.indexOf(item) }}
+            >
               <a href={item.href} className="text-muted-foreground transition-colors hover:text-foreground">
                 {item.label}
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
@@ -51,13 +62,13 @@ export function Navbar() {
         </div>
       </nav>
 
-      <div
-        className={cn(
-          "grid overflow-hidden border-t border-border transition-[grid-template-rows] duration-300 md:hidden",
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        )}
+      <motion.div
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        className="overflow-hidden border-t border-border md:hidden"
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       >
-        <ul className="min-h-0 flex-col gap-1 overflow-hidden px-6 py-4 font-mono text-sm">
+        <ul className="flex min-h-0 flex-col gap-1 px-6 py-4 font-mono text-sm">
           {portfolio.nav.map((item) => (
             <li key={item.href}>
               <a
@@ -75,7 +86,7 @@ export function Navbar() {
             </a>
           </li>
         </ul>
-      </div>
+      </motion.div>
     </header>
   );
 }
