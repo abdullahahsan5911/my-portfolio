@@ -53,11 +53,15 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-wrap items-center gap-4">
-        <a
+      <div className="mt-10 flex  items-center gap-4">
+       
+        <div data-hero-cta className="flex items-center gap-3 pl-2">
+           <a
           data-hero-cta
           href="#projects"
-          className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
+          className="flex items-center gap-2 rounded-full
+           bg-primary px-6 py-3 text-sm font-medium text-primary-foreground 
+           transition-transform "
         >
           View my work
           <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -65,17 +69,19 @@ export function Hero() {
         <a
           data-hero-cta
           href="#contact"
-          className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-muted"
+          className="inline-flex items-center gap-2 rounded-full border border-border 
+          px-6 py-3 text-sm font-medium transition-colors hover:bg-muted"
         >
           Get in touch
         </a>
-        <div data-hero-cta className="flex items-center gap-3 pl-2">
           <a
             href={portfolio.social.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub profile"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:bg-muted"
+            className="inline-flex h-11 w-11 items-center
+             justify-center rounded-full border border-border 
+             transition-colors hover:bg-muted"
           >
             <Github className="h-4 w-4" aria-hidden="true" />
           </a>

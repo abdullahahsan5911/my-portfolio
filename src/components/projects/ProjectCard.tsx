@@ -73,12 +73,14 @@ export function ProjectCard({ project }: { project: Project }) {
             <span className="font-mono text-xs uppercase tracking-[0.3em]">Case study / {project.slug}</span>
             <span className="max-w-[10ch] font-display text-4xl leading-none sm:text-6xl">{project.name}</span>
           </div>
-          <ImageCarousel
-            images={[project.image]}
-            alt={`Screenshot of the ${project.name} project`}
-            className="relative z-[1] h-full"
-            imageClassName="relative h-full w-full object-cover transition-transform duration-700 group-hover/image:scale-105"
-          />
+          {project.images.length > 0 ? (
+            <ImageCarousel
+              images={project.images}
+              alt={`Screenshot of the ${project.name} project`}
+              className="relative z-[1] h-full"
+              imageClassName="relative h-full w-full object-cover transition-transform duration-700 group-hover/image:scale-105"
+            />
+          ) : null}
         </div>
         {project.liveUrl ? (
           <a

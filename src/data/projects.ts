@@ -6,8 +6,8 @@ export type Project = {
   features: string[];
   githubUrl: string | null;
   liveUrl: string | null;
-  // Path under /public/assets/projects - replace the actual file when you have a screenshot.
-  image: string;
+  // Paths under /public/assets/projects.
+  images: string[];
   featured?: boolean;
 };
 
@@ -39,8 +39,9 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/abdullahahsan5911/localskillhub",
     // TODO: Add the live deployment URL for LocalSkillHub here once it's hosted.
     liveUrl: null,
-    image: "/assets/projects/localskillhub.png",
-    // TODO: Replace this image with an actual LocalSkillHub screenshot.
+    images: Array.from({ length: 28 }, (_, index) =>
+      `/assets/projects/localskillhub/localskillhub${index + 1}.png`
+    ),
     featured: true
   },
   {
@@ -68,8 +69,9 @@ export const projects: Project[] = [
     githubUrl: null,
     // TODO: Add a live deployment URL if this project is hosted anywhere.
     liveUrl: null,
-    image: "/assets/projects/datax-lead-ledger.png",
-    // TODO: Replace this image with an actual Lead Ledger dashboard screenshot.
+    images: Array.from({ length: 11 }, (_, index) =>
+      `/assets/projects/lead%20generation/l${index + 1}.png`
+    ),
     featured: true
   },
   {
@@ -99,9 +101,64 @@ export const projects: Project[] = [
     // TODO: Add the GitHub repository link for this project once confirmed.
     githubUrl: null,
     liveUrl: null,
-    image: "/assets/projects/rentconnect.png",
-    // TODO: Replace this image with an actual RentConnect screenshot.
+    images: [],
     featured: false
+  },
+  {
+    slug: "esfylo-watches",
+    name: "Esfylo Watches Store",
+    description:
+      "Esfylo is a client e-commerce store for premium watches, built to give customers a polished shopping experience from product discovery through checkout. The storefront supports curated collections, detailed product views, account flows, and a connected admin workspace for managing the catalog and orders.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "JWT Auth",
+      "Cash on Delivery"
+    ],
+    features: [
+      "Responsive watch storefront with home, collections, product detail, cart, and checkout experiences",
+      "Product search, category browsing, image galleries, discounts, stock visibility, and related products",
+      "Admin workspace for products, categories, orders, inventory, banners, reviews, coupons, and settings",
+      "Customer account, wishlist, order flow, payment instructions, and WhatsApp support touchpoints"
+    ],
+    githubUrl: null,
+    liveUrl: null,
+    images: Array.from({ length: 10 }, (_, index) =>
+      `/assets/projects/esfylo/e${index + 1}.png`
+    ),
+    featured: true
+  },
+  {
+    slug: "heavencrafts-kitchen-store",
+    name: "Heavencrafts Kitchen Crockery Store",
+    description:
+      "Heavencrafts is a client e-commerce store for kitchen crockery, cookware, glassware, and dining accessories. The experience combines editorial brand storytelling with a live catalog, product merchandising, detailed shopping flows, and store management tools.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "JWT Auth",
+      "Cash on Delivery"
+    ],
+    features: [
+      "Branded storefront with collection discovery, featured products, best sellers, and responsive navigation",
+      "Catalog filtering, category pages, product galleries, variants, quantity controls, reviews, and recommendations",
+      "Admin product and category management with images, pricing, stock, discounts, and merchandising controls",
+      "Editorial About page, delivery messaging, customer support links, and promotional homepage sections"
+    ],
+    githubUrl: null,
+    liveUrl: null,
+    images: Array.from({ length: 6 }, (_, index) =>
+      `/assets/projects/kitchen%20crockery/k${index + 1}.png`
+    ),
+    featured: true
   },
 
 
